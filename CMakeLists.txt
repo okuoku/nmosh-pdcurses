@@ -10,6 +10,15 @@ set(srcs_win32a
     win32a/pdcsetsc.c
     win32a/pdcutil.c)
 
+set(srcs_win32
+    win32/pdcclip.c
+    win32/pdcdisp.c
+    win32/pdcgetsc.c
+    win32/pdckbd.c
+    win32/pdcscrn.c
+    win32/pdcsetsc.c
+    win32/pdcutil.c)
+
 set(srcs_common
     pdcurses/addch.c
     pdcurses/addchstr.c
@@ -62,3 +71,8 @@ include_directories(.)
 add_library(pdcurses_win32a STATIC
     ${srcs_common}
     ${srcs_win32a})
+
+add_library(pdcurses_win32 STATIC
+    ${srcs_common}
+    ${srcs_win32})
+
