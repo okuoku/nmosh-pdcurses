@@ -64,7 +64,7 @@ set(srcs_common
     pdcurses/window.c
     )
 
-add_definitions(-DPDC_WIDE -DPDC_FORCE_UTF8 -DPDCDEBUG)
+add_definitions(-DPDC_WIDE -DPDC_FORCE_UTF8)
 
 include_directories(.)
 
