@@ -64,7 +64,7 @@ set(srcs_common
     pdcurses/window.c
     )
 
-add_definitions(-DPDC_WIDE)
+add_definitions(-DPDC_WIDE -DPDC_FORCE_UTF8 -DPDCDEBUG)
 
 include_directories(.)
 
@@ -76,3 +76,8 @@ add_library(pdcurses_win32 STATIC
     ${srcs_common}
     ${srcs_win32})
 
+if(NOT MSVC)
+set_target_properties(pdcurses_win32a pdcurses_win32
+    PROPERTIES
+    COMPILE_FLAGS "-fwide-exec-charset=ucs-2le")
+endif()
